@@ -4,9 +4,398 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CED &rarr; Livros atuais</title>
+    <link rel="stylesheet" href="_css_general.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
-    <link rel="stylesheet" href="_css/general.css">
-    <link rel="stylesheet" href="_css/index.css">
+    <style>
+        /*Link atual do menu*/
+        .menu-principal ul li:nth-child(1) a{
+            color: #73B2FF;
+        }
+        /*}}}*/
+        /*Apresentação*/
+        .apresentacao{
+            width: 100%;
+            padding: 20px 0;
+        }
+        .apresentacao h1{
+            margin-bottom: 20px;
+            font-size: 24pt;
+            font-family: 'Berkshire Swash', sans-serif;
+            text-align: center;
+            color: #454C54;
+        }
+        .apresentacao p{
+            margin-bottom: 10px;
+            font-size: 12pt;
+            text-align: center;
+            color: #454C54;
+        }
+        .apresentacao .envolucro-pesquisa{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .apresentacao .envolucro-pesquisa .input-pesquisa{
+            position: relative;
+            display: flex;
+            width: 100%;
+            max-width: 700px;
+            height: 55px;
+        }
+        .envolucro-pesquisa .input-pesquisa input{
+            width: 100%;
+            height: 100%;
+            padding: 0 124px 0 20px;
+            font-size: 12pt;
+            color: #454C54;
+            border: 1px solid gray;
+            outline: none;
+            border-radius: 55px;
+        }
+        .input-pesquisa input::-webkit-search-cancel-button{
+            display: none;
+        }
+        .envolucro-pesquisa .input-pesquisa button{
+            position: absolute;
+            width: 120px;
+            height: 55px;
+            top: 0;
+            right: 0;
+            color: white;
+            font-size: 11pt;
+            border: none;
+            outline: none;
+            border-radius: 0 55px 55px 0;
+            background-color: #454C54;
+            opacity: 0;
+            pointer-events: none;
+            transition: .3s;
+        }
+        .input-pesquisa input:valid + button{
+            opacity: 1;
+            pointer-events: all;
+        }
+        .envolucro-pesquisa .input-pesquisa button:hover{
+            background-color: #0860CA;
+        }
+        .envolucro-pesquisa .envolucro-cartoes{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+            padding: 30px 0;
+        }
+        .apresentacao .envolucro-pesquisa h2{
+            margin-top: 20px;
+            text-align: center;
+            font-size: 20pt;
+            font-weight: 400;
+            color: #454C54;
+        }
+        .envolucro-pesquisa .envolucro-cartoes a{
+            text-decoration: none;
+        }
+        .envolucro-pesquisa .envolucro-cartoes .cartao{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 10px;
+            border-radius: 20px;
+            box-shadow: 3px 3px 3px #BBB;
+            overflow: hidden;
+            cursor: pointer;
+            transition: .3s;
+        }
+        .envolucro-cartoes a:nth-child(1) .cartao{
+            background: url('../_img/destaque-literature.jpg');
+        }
+        .envolucro-cartoes a:nth-child(2) .cartao{
+            background: url('../_img/destaque-cartoon.jpg');
+        }
+        .envolucro-cartoes a:nth-child(3) .cartao{
+            background: url('../_img/destaque-poerty.jpg');
+        }
+        .envolucro-cartoes a:nth-child(4) .cartao{
+            background: url('../_img/destaque-fantasy.jpg');
+        }
+        .envolucro-cartoes a:nth-child(1) .cartao,
+        .envolucro-cartoes a:nth-child(2) .cartao,
+        .envolucro-cartoes a:nth-child(3) .cartao,
+        .envolucro-cartoes a:nth-child(4) .cartao{
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+        .envolucro-pesquisa .envolucro-cartoes .cartao:hover{
+            transform: scale(1.05);
+            box-shadow: 3px 3px 5px #454C54;
+        }
+        .envolucro-cartoes .cartao .overlay{
+            width: 100%;
+            height: 100%;
+            background-color: #454C54BB;
+        }
+        .envolucro-cartoes .cartao .texto{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+        }
+        .envolucro-cartoes .cartao .texto .title{
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        .envolucro-cartoes .cartao .texto .title h3{
+            font-size: 16pt;
+            font-weight: 400;
+            font-family: 'Berkshire Swash';
+            color: white;
+            text-align: center;
+        }
+        .envolucro-cartoes .cartao .texto p{
+            font-size: 10pt;
+            text-align: center;
+            color: white;
+        }
+        .apresentacao .envolucro-pesquisa > a{
+            display: block;
+            padding: 13px 30px;
+            font-size: 11pt;
+            color: #454C54;
+            text-decoration: none;
+            border: 1px solid #454C54;
+            outline: none;
+            border-radius: 26px;
+            background-color: white;
+            transition: .3s;
+        }
+        .apresentacao .envolucro-pesquisa > a:hover{
+            color: white;
+            background-color: #454C54;
+        }
+        /*}}}*/
+        /*Incentivo à leitura*/
+        .incentivar{
+            width: 100%;
+            padding: 20px 0;
+        }
+        .incentivar h2{
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 20pt;
+            font-weight: 400;
+            color: #454C54;
+        }
+        .incentivar .img-txt-btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .incentivar .img-txt-btn img{
+            width: 100%;
+            max-width: 375px;
+        }
+        .incentivar .img-txt-btn .txt-btn{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            max-width: 375px;
+        }
+        .incentivar .img-txt-btn .txt-btn p{
+            width: 100%;
+            margin-bottom: 20px;
+            text-indent: 20px;
+            color: #454C54;
+        }
+        .incentivar .img-txt-btn .txt-btn a{
+            display: block;
+            width: max-content;
+            padding: 13px 20px;
+            color: #454C54;
+            text-decoration: none;
+            border: 1px solid #454C54;
+            border-radius: 40px;
+            background-color: transparent;
+            transition: .3s;
+        }
+        .incentivar .img-txt-btn .txt-btn a:hover{
+            color: white;
+            background-color: #454C54;
+        }
+        /*}}}*/
+        /*Estatísticas do site*/
+        .estatisticas{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding: 20px 0;
+            background-color: #EEE;
+        }
+        .estatisticas h2{
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 20pt;
+            font-weight: 400;
+            color: #454C54;
+        }
+        .estatisticas .downloads,
+        .estatisticas .users,
+        .estatisticas .livros{
+            display: flex;
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            padding: 20px;
+        }
+        .estatisticas .downloads{
+            justify-content: flex-start;
+        }
+        .estatisticas .users{
+            justify-content: center;
+        }
+        .estatisticas .livros{
+            justify-content: flex-end;
+        }
+        .estatisticas .downloads span,
+        .estatisticas .users span,
+        .estatisticas .livros span{
+            width: 80px;
+            height: 80px;
+            margin-right: 20px;
+            color: #FF5E10;
+            font-size: 30pt;
+            text-align: center;
+            line-height: 80px;
+            border-radius: 40px;
+            background-color: #303841;
+        }
+        .estatisticas .downloads label,
+        .estatisticas .users label,
+        .estatisticas .livros label{
+            font-size: 14pt;
+            line-height: 80px;
+            color: #454C54;
+        }
+        /*}}}*/
+        /*O que nossos usuários dizem*/
+        .what-people-say{
+            width: 100%;
+            padding: 20px 0;
+            background-color: #73B2FF11;
+        }
+        .what-people-say h2{
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 20pt;
+            font-weight: 400;
+            color: #454C54;
+        }
+        .what-people-say .testimonials{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            min-height: 350px;
+        }
+        .what-people-say .testimonials .testimonial{
+            display: flex;
+            width: 300px;
+            height: 200px;
+        }
+        .testimonials .testimonial .img-conteiner{
+            width: 80px;
+            min-width: 60px;
+            height: 100%;
+            padding: 0 5px;
+        }
+        .testimonials .testimonial .img-conteiner img{
+            width: 100%;
+        }
+        .testimonials .testimonial .body{
+            width: auto;
+            max-width: 220px;
+            height: 100%;
+            padding: 10px;
+        }
+        .testimonials .testimonial .body p{
+            margin-bottom: 3px;
+            color: #454C54;
+            font-size: 11pt;
+        }
+        .testimonials .testimonial .body .name{
+            color: #73B2FF;
+            font-size: 16pt;
+        }
+        /**/
+
+        /*Compatibilidade com screen*/
+        @media screen and (max-width: 972px) {
+            .envolucro-pesquisa .input-pesquisa{
+                width: 100%;
+                padding: 0 25px;
+            }
+            .envolucro-pesquisa .input-pesquisa button{
+                right: 25px;
+            }
+            .envolucro-cartoes .cartao{
+                margin-bottom: 15px !important;
+            }
+            .incentivar .img-txt-btn{
+                flex-wrap: wrap;
+            }
+        }
+        @media screen and (max-width: 500px) {
+            .envolucro-pesquisa .input-pesquisa input{
+                padding-right: 98px;
+            }
+            .envolucro-pesquisa .input-pesquisa button{
+                width: 96px;
+            }
+            .incentivar .img-txt-btn{
+                flex-direction: column;
+                align-items: center;
+            }
+            .incentivar .img-txt-btn .txt-btn{
+                align-items: center;
+                text-align: center;
+            }
+            .estatisticas .downloads,
+            .estatisticas .users,
+            .estatisticas .livros{
+                flex-direction: column;
+                align-items: center;
+            }
+            .estatisticas .downloads span,
+            .estatisticas .users span,
+            .estatisticas .livros span{
+                margin: auto;
+            }
+            .estatisticas .downloads label,
+            .estatisticas .users label,
+            .estatisticas .livros label{
+                margin-top: 10px;
+                text-align: center;
+                font-size: 12pt;
+                line-height: 30px;
+            }
+            .what-people-say .testimonials .testimonial{
+                flex-direction: column;
+                align-items: center;
+                margin: 20px 0;
+            }
+            .testimonials .testimonial .body{
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -199,7 +588,6 @@
             <p>Copyright CED<sup>&copy;</sup>, Todos os direitos reservados. Por Grupo B, inc.</p>
         </div>
     </footer>
-    <script src="_js/menu.js"></script>
-    <script src="_js/rate.js"></script>
+    <script src="_js_menu.js"></script>
 </body>
 </html>
