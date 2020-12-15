@@ -37,7 +37,7 @@ main{
     width: 100%;
     max-width: 400px;
     height: 500px;
-    background: url('../_img/quem-somos.png');
+    background: url('.././_img/quem-somos.png');
     background-position: center center;
     background-size: contain;
     background-repeat: no-repeat;

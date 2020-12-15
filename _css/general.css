@@ -1,11 +1,5 @@
-@font-face{
-    font-family: 'Open Sans';
-    src: url('../_fonts/OpenSans-Regular.ttf');
-}
-@font-face{
-    font-family: 'Berkshire Swash';
-    src: url('../_fonts/BerkshireSwash-Regular.ttf');
-}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
 *{
     margin: 0;
     padding: 0;
