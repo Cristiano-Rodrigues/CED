@@ -98,16 +98,16 @@
     transition: .3s;
 }
 .envolucro-cartoes a:nth-child(1) .cartao{
-    background: url('img/destaque-literature.jpg');
+    background: url('../img/destaque-literature.jpg');
 }
 .envolucro-cartoes a:nth-child(2) .cartao{
-    background: url('img/destaque-cartoon.jpg');
+    background: url('../img/destaque-cartoon.jpg');
 }
 .envolucro-cartoes a:nth-child(3) .cartao{
-    background: url('img/destaque-poerty.jpg');
+    background: url('../img/destaque-poerty.jpg');
 }
 .envolucro-cartoes a:nth-child(4) .cartao{
-    background: url('img/destaque-fantasy.jpg');
+    background: url('../img/destaque-fantasy.jpg');
 }
 .envolucro-cartoes a:nth-child(1) .cartao,
 .envolucro-cartoes a:nth-child(2) .cartao,

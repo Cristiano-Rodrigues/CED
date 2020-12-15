@@ -10,7 +10,7 @@
     align-items: center;
     width: 100%;
     padding: 100px 0;
-    background: url('img/contact-us-background.jpg');
+    background: url('../img/contact-us-background.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;

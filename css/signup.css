@@ -7,7 +7,7 @@
     height: auto;
     min-height: 680px;
     padding: 20px 0;
-    background: url('img/conta-background.jpg');
+    background: url('../img/conta-background.jpg');
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;

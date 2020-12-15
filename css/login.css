@@ -8,7 +8,7 @@
     width: 100%;
     height: 100vh;
     max-height: 680px;
-    background: url('img/conta-background.jpg');
+    background: url('../img/conta-background.jpg');
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
