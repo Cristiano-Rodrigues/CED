@@ -1,0 +1,212 @@
+/*Link atual do menu*/
+.menu-principal ul li:nth-child(4) a{
+    color: #73B2FF;
+}
+/*}}}*/
+/*Corpo da página*/
+.container-all{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 100px 0;
+    background: url('../_img/contact-us-background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+}
+.container-all .form-container{
+    display: flex;
+    width: 800px;
+    max-width: calc(100% - 20px);
+    padding: 40px 0;
+    background-color: white;
+}
+.container-all .form-container .contact{
+    width: 60%;
+    height: 100%;
+}
+.container-all .form-container .contact form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+.form-container .contact form h1,
+.form-container .contact form em{
+    margin-bottom: 30px;
+    font-family: 'Berkshire Swash';
+    font-weight: 400;
+    font-size: 24pt;
+    color: #454C54;
+}
+.form-container .contact form .input-container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 0;
+}
+.contact form .input-container input{
+    width: calc(50% - 5px);
+    padding: 13px;
+    color: #454C54;
+    font-size: 11pt;
+    border: 1px solid #454C54;
+    outline: none;
+    border-radius: 40px;
+    transition: .3s;
+}
+.form-container .contact form textarea{
+    width: 63%;
+    min-width: 240px;
+    padding: 13px;
+    height: 150px;
+    font-size: 11pt;
+    border: 1px solid #454C54;
+    outline: none;
+    border-radius: 20px;
+    transition: .3s;
+    resize: none;
+}
+.contact form .input-container input:valid,
+.form-container .contact form textarea:valid{
+    color: #73B2FF;
+    border-color: #73B2FF;
+}
+.form-container .contact form .classification{
+    padding-top: 13px;
+    color: #454C54;
+    font-size: 12pt;
+}
+.form-container .contact form .classification span.active{
+    color: #FF5E10;
+}
+.form-container .contact form button{
+    width: max-content;
+    margin-top: 20px;
+    padding: 13px 40px;
+    font-size: 12pt;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: #0860CA;
+    transition: .3s;
+}
+.form-container .contact form button:hover{
+    background-color: #FF5E10;
+}
+.container-all .form-container .feed-back{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40%;
+    height: 100%;
+    padding: 10px;
+    background-color: #73B2FF;
+    transform: translateX(20%);
+}
+.container-all .form-container .feed-back h2{
+    margin-bottom: 20px;
+    font-weight: 400;
+    color: white;
+}
+.form-container .feed-back .testimonials{
+    width: 100%;
+    height: min-content;
+    margin-bottom: 50px;
+}
+.feed-back .testimonials .testimonial{
+    display: flex;
+    width: 100%;
+}
+.feed-back .testimonials .testimonial .img-container{
+    width: 100px;
+    height: 100%;
+    padding: 0 10px;
+}
+.testimonials .testimonial .img-container img{
+    width: 100%;
+}
+.feed-back .testimonials .testimonial .body{
+    width: 100%;
+    padding: 5px 0;
+}
+.feed-back .testimonials .testimonial .body p{
+    margin-bottom: 5px;
+    color: white;
+}
+.feed-back .testimonials .testimonial .body .name{
+    font-size: 12pt;
+    font-weight: bolder;
+    color: #0860CA;
+}
+.form-container .feed-back .social-medias{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 10px 0;
+}
+.form-container .feed-back .social-medias a{
+    text-decoration: none;
+    color: #0860CA;
+    transition: .3s;
+}
+.form-container .feed-back .social-medias a:hover{
+    color: white;
+}
+.form-container .feed-back .social-medias a span{
+    font-size: 18pt;
+}
+/*}}}*/
+
+
+/*Compatibilidade com screen*/
+@media screen and (max-width: 972px) {
+    .container-all .form-container .contact h1{
+        text-align: center;
+    }
+    .container-all .form-container .feed-back{
+        transform: translateX(0);
+    }
+}
+@media screen and (max-width: 680px) {
+    .contact form .input-container{
+        flex-direction: column;
+    }
+    .contact form .input-container input{
+        width: 100%;
+        margin: 3px 0;
+    }
+    .container-all .form-container .feed-back h2{
+        text-align: center;
+    }
+    .feed-back .testimonials .testimonial{
+        flex-direction: column;
+        align-items: center;
+    }
+    .feed-back .testimonials .testimonial .body{
+        text-align: center;
+    }
+}
+@media screen and (max-width: 500px) {
+    .container-all .form-container{
+        flex-direction: column;
+    }
+    .container-all .contact form textarea{
+        max-width: 100%;
+        min-width: 100%;
+    }
+    .container-all .contact form button{
+        width: 100%;
+    }
+    .container-all .form-container .contact{
+        width: 100%;
+    }
+    .container-all .form-container .feed-back{
+        width: 100%;
+    }
+}
